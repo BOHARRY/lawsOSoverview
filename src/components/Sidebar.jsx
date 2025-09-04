@@ -120,7 +120,7 @@ function Sidebar() {
               marginBottom: '-400px',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              zIndex: '0',
+              zIndex: '-1',
               opacity: '0.1'
             }}
           />

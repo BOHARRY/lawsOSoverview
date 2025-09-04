@@ -60,9 +60,13 @@ function HomePage() {
         </h1>
         <p className="page-subtitle">更全面、更透明的智慧備訟助手：不只查判決，還要幫你贏</p>
       </header>
+      <div className="kpi-strip-title">
+          價值主張
+        </div>
 
       {/* KPI strip above the three core cards */}
-      <section className="content-section2" aria-label="關鍵效益">
+      <section className="content-section2" aria-label="價值主張">
+        
         <div className="kpi-strip">
           <div className="kpi-item" style={{padding:'18px 8px'}}>
             <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>備訟效率</div>

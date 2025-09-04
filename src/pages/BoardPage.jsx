@@ -1,7 +1,105 @@
 import React, { useState } from 'react'
 
 function BoardPage() {
-  const [activeCard, setActiveCard] = useState(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
+
+  const cardData = [
+    {
+      id: 'case',
+      title: '案件卡片',
+      badge: '核心',
+      icon: 'https://api.iconify.design/material-symbols:folder-open-outline.svg',
+      description: '整理案件基本資訊、時間軸、關鍵事實',
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop&auto=format',
+      details: [
+        '📋 案件編號、當事人資訊',
+        '📅 重要時間節點記錄',
+        '🔍 關鍵事實與爭點整理',
+        '📎 相關文件附件管理'
+      ]
+    },
+    {
+      id: 'law',
+      title: '法條卡片',
+      badge: '依據',
+      icon: 'https://api.iconify.design/material-symbols:gavel.svg',
+      description: '收集相關法條、判例、學說見解',
+      image: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=400&h=250&fit=crop&auto=format',
+      details: [
+        '⚖️ 適用法條條文內容',
+        '📚 相關判例與裁判要旨',
+        '🎓 學者專家見解引用',
+        '🔗 法條間關聯性分析'
+      ]
+    },
+    {
+      id: 'evidence',
+      title: '證據卡片',
+      badge: '關鍵',
+      icon: 'https://api.iconify.design/material-symbols:fact-check-outline.svg',
+      description: '管理證據資料、證明力分析',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&auto=format',
+      details: [
+        '📄 書證、物證分類管理',
+        '👥 證人證言記錄整理',
+        '🔬 鑑定報告與專業意見',
+        '⚡ 證據力強弱評估'
+      ]
+    },
+    {
+      id: 'strategy',
+      title: '策略卡片',
+      badge: 'AI',
+      icon: 'https://api.iconify.design/material-symbols:strategy-outline.svg',
+      description: 'AI 分析攻防策略、致勝關鍵',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&auto=format',
+      details: [
+        '🎯 攻防切角建議',
+        '💡 潛在有利見解',
+        '🔑 關鍵致勝因子',
+        '📊 勝訴機率評估'
+      ]
+    }
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % cardData.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + cardData.length) % cardData.length)
+  }
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index)
+  }
+
+  // 觸摸手勢處理
+  const minSwipeDistance = 50
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe) {
+      nextSlide()
+    } else if (isRightSwipe) {
+      prevSlide()
+    }
+  }
 
   return (
     <>
@@ -51,93 +149,63 @@ function BoardPage() {
       {/* 圖板卡片介紹 */}
       <section className="content-section">
         <h2 className="section-title">圖板卡片介紹</h2>
-        <div className="board-cards-grid">
-          <div
-            className={`board-card ${activeCard === 'case' ? 'active' : ''}`}
-            onClick={() => setActiveCard(activeCard === 'case' ? null : 'case')}
-          >
-            <div className="card-header">
-              <img className="card-icon" src="https://api.iconify.design/material-symbols:folder-open-outline.svg" />
-              <h3>案件卡片</h3>
-              <span className="card-badge">核心</span>
-            </div>
-            <div className="card-content">
-              <p>整理案件基本資訊、時間軸、關鍵事實</p>
-              {activeCard === 'case' && (
-                <div className="card-details">
-                  <div className="detail-item">📋 案件編號、當事人資訊</div>
-                  <div className="detail-item">📅 重要時間節點記錄</div>
-                  <div className="detail-item">🔍 關鍵事實與爭點整理</div>
-                  <div className="detail-item">📎 相關文件附件管理</div>
+        <div className="card-carousel">
+          <div className="carousel-container">
+            {/* 左箭頭 */}
+            <button className="carousel-btn prev" onClick={prevSlide}>
+              <img src="https://api.iconify.design/material-symbols:chevron-left.svg" alt="previous" />
+            </button>
+
+            {/* 輪播內容 */}
+            <div
+              className="carousel-content"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
+              <div className="carousel-slide">
+                <div className="slide-image">
+                  <img src={cardData[currentSlide].image} alt={cardData[currentSlide].title} />
+                  <div className="image-overlay">
+                    <img className="card-icon-large" src={cardData[currentSlide].icon} alt="icon" />
+                  </div>
                 </div>
-              )}
+                <div className="slide-content">
+                  <div className="slide-header">
+                    <div className="slide-title-row">
+                      <h3>{cardData[currentSlide].title}</h3>
+                      <span className={`slide-badge badge-${cardData[currentSlide].id}`}>
+                        {cardData[currentSlide].badge}
+                      </span>
+                    </div>
+                    <p className="slide-description">{cardData[currentSlide].description}</p>
+                  </div>
+                  <div className="slide-details">
+                    {cardData[currentSlide].details.map((detail, index) => (
+                      <div key={index} className="detail-item">
+                        {detail}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* 右箭頭 */}
+            <button className="carousel-btn next" onClick={nextSlide}>
+              <img src="https://api.iconify.design/material-symbols:chevron-right.svg" alt="next" />
+            </button>
           </div>
 
-          <div
-            className={`board-card ${activeCard === 'law' ? 'active' : ''}`}
-            onClick={() => setActiveCard(activeCard === 'law' ? null : 'law')}
-          >
-            <div className="card-header">
-              <img className="card-icon" src="https://api.iconify.design/material-symbols:gavel.svg" />
-              <h3>法條卡片</h3>
-              <span className="card-badge">依據</span>
-            </div>
-            <div className="card-content">
-              <p>收集相關法條、判例、學說見解</p>
-              {activeCard === 'law' && (
-                <div className="card-details">
-                  <div className="detail-item">⚖️ 適用法條條文內容</div>
-                  <div className="detail-item">📚 相關判例與裁判要旨</div>
-                  <div className="detail-item">🎓 學者專家見解引用</div>
-                  <div className="detail-item">🔗 法條間關聯性分析</div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div
-            className={`board-card ${activeCard === 'evidence' ? 'active' : ''}`}
-            onClick={() => setActiveCard(activeCard === 'evidence' ? null : 'evidence')}
-          >
-            <div className="card-header">
-              <img className="card-icon" src="https://api.iconify.design/material-symbols:fact-check-outline.svg" />
-              <h3>證據卡片</h3>
-              <span className="card-badge">關鍵</span>
-            </div>
-            <div className="card-content">
-              <p>管理證據資料、證明力分析</p>
-              {activeCard === 'evidence' && (
-                <div className="card-details">
-                  <div className="detail-item">📄 書證、物證分類管理</div>
-                  <div className="detail-item">👥 證人證言記錄整理</div>
-                  <div className="detail-item">🔬 鑑定報告與專業意見</div>
-                  <div className="detail-item">⚡ 證據力強弱評估</div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div
-            className={`board-card ${activeCard === 'strategy' ? 'active' : ''}`}
-            onClick={() => setActiveCard(activeCard === 'strategy' ? null : 'strategy')}
-          >
-            <div className="card-header">
-              <img className="card-icon" src="https://api.iconify.design/material-symbols:strategy-outline.svg" />
-              <h3>策略卡片</h3>
-              <span className="card-badge">AI</span>
-            </div>
-            <div className="card-content">
-              <p>AI 分析攻防策略、致勝關鍵</p>
-              {activeCard === 'strategy' && (
-                <div className="card-details">
-                  <div className="detail-item">🎯 攻防切角建議</div>
-                  <div className="detail-item">💡 潛在有利見解</div>
-                  <div className="detail-item">🔑 關鍵致勝因子</div>
-                  <div className="detail-item">📊 勝訴機率評估</div>
-                </div>
-              )}
-            </div>
+          {/* 指示點 */}
+          <div className="carousel-dots">
+            {cardData.map((_, index) => (
+              <button
+                key={index}
+                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+              />
+            ))}
           </div>
         </div>
       </section>
