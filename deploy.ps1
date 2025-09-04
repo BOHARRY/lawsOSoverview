@@ -131,12 +131,16 @@ if (Test-Path "index.html") {
 
 # 複製新文件
 Write-Info "📁 複製構建文件..."
-Copy-Item -Path "dist/*" -Destination "." -Recurse
-if ($LASTEXITCODE -ne 0) {
-    Write-Error "❌ 複製文件失敗"
-    git checkout main
+# 先回到 main 分支複製文件
+git checkout main
+if (!(Test-Path "dist")) {
+    Write-Error "❌ dist 目錄不存在，請先運行構建"
     exit 1
 }
+Copy-Item -Path "dist/*" -Destination "temp-deploy" -Recurse -Force
+git checkout gh-pages
+Copy-Item -Path "temp-deploy/*" -Destination "." -Recurse -Force
+Remove-Item -Path "temp-deploy" -Recurse -Force
 
 # 提交並推送 gh-pages
 Write-Info "📤 提交並推送到 gh-pages..."
