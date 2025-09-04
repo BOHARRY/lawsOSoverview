@@ -126,7 +126,7 @@ function Sidebar() {
           />
 
         <div className="nav-section">
-          <div className="nav-section-title">功能導覽</div>
+          <div className="nav-section-title">功能導覽列</div>
           <Link 
             to="/" 
             className={`nav-item ${isActive('/') ? 'active' : ''}`}
