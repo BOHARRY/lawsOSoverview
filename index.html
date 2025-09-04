@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LawsOS 一站式智慧案件整合平台</title>
+    <link rel="stylesheet" href="/overview-styles.css?v=1.0.0">
+        <script>
+            (function(){
+                function cssOK(){
+                    var v = getComputedStyle(document.documentElement).getPropertyValue('--overview-css-loaded');
+                    return (v||'').trim() === '1';
+                }
+                if(!cssOK()){
+                    var candidates = ['../overview-styles.css?v=1.0.0','../../overview-styles.css?v=1.0.0'];
+                    for (var i=0;i<candidates.length;i++){
+                        var link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.href = candidates[i];
+                        document.head.appendChild(link);
+                        link.addEventListener('load', function(){
+                            if (cssOK()) console.log('Overview fallback CSS loaded');
+                        });
+                    }
+                }
+            })();
+        </script>
+
+    <link rel="stylesheet" href="../overview-styles.css?v=1.0.0">
+
+    <link rel="icon" href="https://api.iconify.design/material-symbols:owl.svg">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+          <div class="sidebar-header">
+            <div class="logo">
+              <img
+                src="https://api.iconify.design/material-symbols:owl.svg"
+                alt="owl"
+                style="filter: invert(1); width: 50px; height: 50px; vertical-align: -4px; margin-right: 8px;"
+              />
+              <span style="font-size: 2rem;">LawsOS</span>
+            </div>
+          </div>
+
+          <img class="owl-logo"
+                src="https://api.iconify.design/material-symbols:owl.svg"
+                alt="owl"
+              />
+
+          <div class="nav-section">
+            <div class="nav-section-title">功能導覽</div>
+            <a href="./" class="nav-item active">主頁</a>
+            <a href="./board.html" class="nav-item">知識圖板</a>
+            <a href="./case-search.html" class="nav-item">判決查找</a>
+            <a href="./lawyer.html" class="nav-item">律師戰歷</a>
+            <a href="./judge.html" class="nav-item">法官傾向</a>
+            <a href="./ai-pleading.html" class="nav-item">訴狀生成</a>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header id="overview" class="page-header hero">
+                <h1 class="page-title"><img src="https://api.iconify.design/material-symbols:owl.svg" alt="owl" style="width:38px;height:38px;vertical-align:-6px;margin-right:10px;">LawsOS 一站式智慧案件整合平台</h1>
+                <p class="page-subtitle">更全面、更透明的智慧備訟助手：不只查判決，還要幫你贏</p>
+            </header>
+
+            <!-- KPI strip above the three core cards -->
+            <section class="content-section2" aria-label="關鍵效益">
+                <div class="kpi-strip" >
+                    <div class="kpi-item" style="padding:18px 8px;">
+                        <div class="kpi-title" style="font-size:24px;color:var(--kpi-text);">備訟效率</div>
+                        <div class="kpi-value animated-number" data-target="60" data-suffix="%" data-prefix="+" style="font-size:54px;font-weight:800;line-height:1.1;margin-top:6px;">+0%</div>
+                    </div>
+                    <div class="kpi-item" style="padding:18px 8px;border-left:1px solid var(--border);">
+                        <div class="kpi-title" style="font-size:24px;color:var(--kpi-text);">管理效率</div>
+                        <div class="kpi-value animated-number" data-target="85" data-suffix="%" data-prefix="+" style="font-size:54px;font-weight:800;line-height:1.1;margin-top:6px;">+0%</div>
+                    </div>
+                    <div class="kpi-item" style="padding:18px 8px;border-left:1px solid var(--border);">
+                        <div class="kpi-title" style="font-size:24px;color:var(--kpi-text);">節省時間</div>
+                        <div class="kpi-value animated-number" data-target="200" data-suffix="小時" data-prefix="" style="font-size:54px;font-weight:800;line-height:1.1;margin-top:6px;">0小時</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features Section -->
+            <section class="content-section">
+                <h2 class="section-title">關鍵特色</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img class="feature-icon" src="https://api.iconify.design/material-symbols:dashboard-outline.svg" alt="dashboard">
+                        <div class="feature-content">
+                            <div class="feature-title">圖板案件管理</div>
+                            <div class="feature-description">視覺化案件細節，更高效的掌握案件脈絡。</div>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img class="feature-icon" src="https://api.iconify.design/material-symbols:psychology-outline.svg" alt="ai-card">
+                        <div class="feature-content">
+                            <div class="feature-title">知識AI卡片</div>
+                            <div class="feature-description">運用模型算力，延伸案件洞察力，找出致勝關鍵。</div>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img class="feature-icon" src="https://api.iconify.design/material-symbols:find-in-page-outline.svg" alt="search">
+                        <div class="feature-content">
+                            <div class="feature-title">智慧判決書查找</div>
+                            <div class="feature-description">除顯示摘要外，還可進行爭點語意檢索以及進階智慧搜索。</div>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img class="feature-icon" src="https://api.iconify.design/material-symbols:edit-document-outline.svg" alt="document">
+                        <div class="feature-content">
+                            <div class="feature-title">智慧訴狀生成</div>
+                            <div class="feature-description">藉由卡片脈絡，獲得遠超GPT語言模型的精確訴狀草稿。</div>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img class="feature-icon" src="https://api.iconify.design/material-symbols:person-search-outline.svg" alt="lawyer">
+                        <div class="feature-content">
+                            <div class="feature-title">查詢律師戰歷</div>
+                            <div class="feature-description">根據律師表現獲得過去戰績統計以及案件表現。</div>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img class="feature-icon" src="https://api.iconify.design/mdi:scale-balance.svg" alt="judge">
+                        <div class="feature-content">
+                            <div class="feature-title">分析法官傾向</div>
+                            <div class="feature-description">獲得法官於指定判決的傾向，以及代表案例和特徵洞察。</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Search box removed; skip listeners to avoid null errors
+        // Expand/Collapse + Copy for JSON code blocks (by id)
+        (function(){
+          function setupBlock(blockId){
+            var block=document.getElementById(blockId); if(!block) return;
+            block.classList.add('collapsed');
+            var actions=document.createElement('div'); actions.className='json-actions';
+            var btnToggle=document.createElement('button'); btnToggle.className='btn'; btnToggle.textContent='展開';
+            var btnCopy=document.createElement('button'); btnCopy.className='btn'; btnCopy.textContent='複製';
+
+            actions.appendChild(btnToggle); actions.appendChild(btnCopy); block.appendChild(actions);
+            btnToggle.addEventListener('click',function(){
+              var isCollapsed=block.classList.contains('collapsed');
+              block.classList.toggle('collapsed'); btnToggle.textContent=isCollapsed?'收合':'展開';
+            });
+            btnCopy.addEventListener('click',function(){
+              var text=(block.querySelector('code')?.innerText)||''; navigator.clipboard.writeText(text).then(()=>{
+                btnCopy.textContent='已複製'; setTimeout(()=>btnCopy.textContent='複製',1200);
+              });
+            });
+          }
+          // Register code blocks by known IDs
+          setupBlock('ds-judgement-json');
+          setupBlock('ds-filters-json');
+          setupBlock('ds-lawyer-json');
+          setupBlock('ds-judge-json');
+          setupBlock('ds-pleading-json');
+          setupBlock('ds-analytics-json');
+        })();
+
+    </script>
+
+    <style>
+      /* 數字動畫震動效果 */
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-8px);
+        }
+        60% {
+          transform: translateY(-4px);
+        }
+      }
+
+      .animated-number {
+        transition: all 0.3s ease;
+      }
+
+      .animated-number.bouncing {
+        animation: bounce 0.6s ease-in-out;
+      }
+
+      .animated-number.counting {
+        color: var(--brand-green);
+        text-shadow: 0 0 10px rgba(86, 183, 122, 0.3);
+      }
+    </style>
+
+    <script>
+      // 數字動畫函數
+      function animateNumber(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const prefix = element.getAttribute('data-prefix') || '';
+        const suffix = element.getAttribute('data-suffix') || '';
+        const duration = 2000; // 2秒動畫
+        const startTime = Date.now();
+
+        element.classList.add('counting');
+
+        function updateNumber() {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // 使用緩動函數讓動畫更自然
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          const current = Math.floor(easeOutQuart * target);
+
+          element.textContent = prefix + current + suffix;
+
+          // 隨機添加震動效果
+          if (Math.random() < 0.3 && progress < 0.9) {
+            element.classList.add('bouncing');
+            setTimeout(() => {
+              element.classList.remove('bouncing');
+            }, 600);
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+          } else {
+            // 動畫結束，最終震動
+            element.classList.remove('counting');
+            element.classList.add('bouncing');
+            setTimeout(() => {
+              element.classList.remove('bouncing');
+            }, 600);
+          }
+        }
+
+        updateNumber();
+      }
+
+      // 頁面載入時啟動動畫
+      document.addEventListener('DOMContentLoaded', function() {
+        // 延遲500ms開始動畫，讓頁面先載入完成
+        setTimeout(() => {
+          const animatedNumbers = document.querySelectorAll('.animated-number');
+          animatedNumbers.forEach((element, index) => {
+            // 錯開每個數字的動畫開始時間
+            setTimeout(() => {
+              animateNumber(element);
+            }, index * 200);
+          });
+        }, 500);
+      });
+    </script>
+    <script>
+      // Mobile sidebar toggle functionality with scroll-triggered bottom button
+      (function(){
+        let isOpen = false;
+        let btn = null;
+        let backdrop = null;
+
+        // Ensure UI exists (button + backdrop). If missing, create them.
+        function ensureUI(){
+          var body = document.body;
+          btn = document.querySelector('.mobile-toggle');
+          backdrop = document.querySelector('.sidebar-backdrop');
+
+          if(!btn){
+            btn = document.createElement('button');
+            btn.className = 'mobile-toggle hide';
+            btn.setAttribute('aria-controls','sidebar');
+            btn.setAttribute('aria-expanded','false');
+            btn.innerHTML = '☰ 功能導覽';
+            body.appendChild(btn);
+          }
+
+          if(!backdrop){
+            backdrop = document.createElement('div');
+            backdrop.className = 'sidebar-backdrop';
+            backdrop.setAttribute('aria-hidden','true');
+            body.appendChild(backdrop);
+          }
+
+          return { btn: btn, backdrop: backdrop };
+        }
+
+        // 更新按鈕文字和樣式
+        function updateButtonState(){
+          if(!btn) return;
+
+          if(isOpen){
+            btn.innerHTML = '✕ 關閉';
+            btn.classList.add('close-mode');
+          } else {
+            btn.innerHTML = '☰ 功能導覽';
+            btn.classList.remove('close-mode');
+          }
+        }
+
+        function open(){
+          isOpen = true;
+          document.body.classList.add('sidebar-open');
+          if(btn) btn.setAttribute('aria-expanded','true');
+          updateButtonState();
+        }
+
+        function close(){
+          isOpen = false;
+          document.body.classList.remove('sidebar-open');
+          if(btn) btn.setAttribute('aria-expanded','false');
+          updateButtonState();
+        }
+
+        // 滾動檢測 - 滑到一半時顯示按鈕
+        function handleScroll(){
+          if(!btn) return;
+
+          const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+
+          if(scrollPercent > 0.3){ // 滑到30%時顯示
+            btn.classList.remove('hide');
+            btn.classList.add('show');
+          } else {
+            btn.classList.remove('show');
+            btn.classList.add('hide');
+            // 如果按鈕隱藏時導覽是開啟的，則關閉它
+            if(isOpen){
+              close();
+            }
+          }
+        }
+
+        function init(){
+          console.log('Mobile toggle init started');
+          var ui = ensureUI();
+          btn = ui.btn;
+          backdrop = ui.backdrop;
+          console.log('Button found:', btn, 'Backdrop found:', backdrop);
+
+          // 滾動事件監聽
+          window.addEventListener('scroll', handleScroll);
+
+          // 初始檢查滾動位置
+          handleScroll();
+
+          // toggle by click
+          btn && btn.addEventListener('click', function(){
+            console.log('Button clicked, current state:', isOpen);
+            if (isOpen) {
+              close();
+            } else {
+              open();
+            }
+          });
+
+          // click backdrop to close
+          backdrop && backdrop.addEventListener('click', function(){
+            console.log('Backdrop clicked');
+            close();
+          });
+
+          // ESC to close
+          document.addEventListener('keydown', function(e){
+            if(e.key==='Escape' && isOpen) {
+              console.log('ESC pressed');
+              close();
+            }
+          });
+
+          console.log('Mobile toggle init completed');
+        }
+
+        if(document.readyState === 'loading'){
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+
+</body>
+</html>
