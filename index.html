@@ -4,29 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LawsOS 一站式智慧案件整合平台</title>
-    <link rel="stylesheet" href="/overview-styles.css?v=1.0.0">
-        <script>
-            (function(){
-                function cssOK(){
-                    var v = getComputedStyle(document.documentElement).getPropertyValue('--overview-css-loaded');
-                    return (v||'').trim() === '1';
-                }
-                if(!cssOK()){
-                    var candidates = ['../overview-styles.css?v=1.0.0','../../overview-styles.css?v=1.0.0'];
-                    for (var i=0;i<candidates.length;i++){
-                        var link = document.createElement('link');
-                        link.rel = 'stylesheet';
-                        link.href = candidates[i];
-                        document.head.appendChild(link);
-                        link.addEventListener('load', function(){
-                            if (cssOK()) console.log('Overview fallback CSS loaded');
-                        });
-                    }
-                }
-            })();
-        </script>
-
-    <link rel="stylesheet" href="../overview-styles.css?v=1.0.0">
+    <link rel="stylesheet" href="./overview-styles.css?v=1.0.0">
 
     <link rel="icon" href="https://api.iconify.design/material-symbols:owl.svg">
 </head>

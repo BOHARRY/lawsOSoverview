@@ -1,16 +1,101 @@
-<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>判決查找 - LawsOwl</title><link rel="stylesheet" href="/overview-styles.css?v=1.0.0"><link rel="stylesheet" href="../overview-styles.css?v=1.0.0"><link rel="icon" href="https://api.iconify.design/material-symbols:owl.svg"></head><body><div class="container"><nav class="sidebar"><div class="sidebar-header"><div class="logo"><img src="https://api.iconify.design/material-symbols:owl.svg" alt="owl" style="filter: invert(1);width:50px;height:50px;vertical-align:-4px;margin-right:8px;"><span style="font-size: 2rem;">LawsOwl</span></div></div><div class="nav-section"><div class="nav-section-title">導覽</div><a href="./" class="nav-item">主頁</a><a href="./board.html" class="nav-item">知識圖板</a><a href="./case-search.html" class="nav-item active">判決查找</a><a href="./lawyer.html" class="nav-item">律師戰歷</a><a href="./judge.html" class="nav-item">法官傾向</a><a href="./ai-pleading.html" class="nav-item">訴狀生成</a></div></nav><main class="main-content"><header class="page-header hero"><h1 class="page-title">判決查找</h1><p class="page-subtitle">AI 高亮 + 智能篩選 + 結構化摘要</p></header><section class="content-section"><h2 class="section-title">功能摘要</h2><ul class="feature-list"><li>關鍵詞 + 多維度篩選（案類、法院、金額、理由、結構、難度）</li><li>AI 高亮法條與引用，點擊可彈出法條浮窗</li><li>結果摘要、結構強度、複雜度等量化指標</li></ul></section></main></div><script src="./_mobile-toggle.js"></script></body></html>
-<section class="content-section"><h2 class="section-title">關鍵畫面</h2><div class="screens-grid">
-<div class="screenshot-card"><div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="shot">搜尋結果列表（高亮法條與引用）</div><div class="caption">一眼看到法條高亮、引用與摘要，支持條件切換</div></div>
-<div class="screenshot-card"><div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="shot">法條浮窗</div><div class="caption">指向法條標註時，快速預覽引用內容與說明</div></div>
-<div class="screenshot-card"><div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="shot">篩選條件</div><div class="caption">案類、法院等條件即時篩選，支援防抖與分頁</div></div>
-</div></section>
-<section class="content-section"><h2 class="section-title">流程</h2><div class="flow">
-<div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:search.svg">輸入關鍵詞/條件</div><div class="arrow">→</div>
-<div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:sync-alt.svg">後端檢索 + AI 高亮</div><div class="arrow">→</div>
-<div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:insights.svg">摘要與量化評分</div>
-</div></section>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判決查找 - LawsOwl</title>
+    <link rel="stylesheet" href="./overview-styles.css?v=1.0.0">
+    <link rel="icon" href="https://api.iconify.design/material-symbols:owl.svg">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="https://api.iconify.design/material-symbols:owl.svg" alt="owl" style="filter: invert(1);width:50px;height:50px;vertical-align:-4px;margin-right:8px;">
+                    <span style="font-size: 2rem;">LawsOwl</span>
+                </div>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">導覽</div>
+                <a href="./" class="nav-item">主頁</a>
+                <a href="./board.html" class="nav-item">知識圖板</a>
+                <a href="./case-search.html" class="nav-item active">判決查找</a>
+                <a href="./lawyer.html" class="nav-item">律師戰歷</a>
+                <a href="./judge.html" class="nav-item">法官傾向</a>
+                <a href="./ai-pleading.html" class="nav-item">訴狀生成</a>
+            </div>
+        </nav>
 
-<section class="content-section"><h2 class="section-title">價值主張</h2><div class="value-grid">
-  <div class="value-card"><img class="icon-20" src="https://api.iconify.design/material-symbols:speed.svg"><div><div class="kpi">縮短檢索時間 80%</div><div class="desc">AI 高亮與即時篩選，迅速收斂結果</div></div></div>
-  <div class="value-card"><img class="icon-20" src="https://api.iconify.design/material-symbols:target.svg"><div><div class="kpi">提高命中率 30%</div><div class="desc">結構化摘要與引用強化，精準找到關鍵</div></div></div>
-</div></section>
+        <main class="main-content">
+            <header class="page-header hero">
+                <h1 class="page-title">判決查找</h1>
+                <p class="page-subtitle">AI 高亮 + 智能篩選 + 結構化摘要</p>
+            </header>
+
+            <section class="content-section">
+                <h2 class="section-title">功能摘要</h2>
+                <ul class="feature-list">
+                    <li>關鍵詞 + 多維度篩選（案類、法院、金額、理由、結構、難度）</li>
+                    <li>AI 高亮法條與引用，點擊可彈出法條浮窗</li>
+                    <li>結果摘要、結構強度、複雜度等量化指標</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">關鍵畫面</h2>
+                <div class="screens-grid">
+                    <div class="screenshot-card">
+                        <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="shot">搜尋結果列表（高亮法條與引用）</div>
+                        <div class="caption">一眼看到法條高亮、引用與摘要，支持條件切換</div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="shot">法條浮窗</div>
+                        <div class="caption">指向法條標註時，快速預覽引用內容與說明</div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="shot">篩選條件</div>
+                        <div class="caption">案類、法院等條件即時篩選，支援防抖與分頁</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">流程</h2>
+                <div class="flow">
+                    <div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:search.svg">輸入關鍵詞/條件</div>
+                    <div class="arrow">→</div>
+                    <div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:sync-alt.svg">後端檢索 + AI 高亮</div>
+                    <div class="arrow">→</div>
+                    <div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:insights.svg">摘要與量化評分</div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">價值主張</h2>
+                <div class="value-grid">
+                    <div class="value-card">
+                        <img class="icon-20" src="https://api.iconify.design/material-symbols:speed.svg">
+                        <div>
+                            <div class="kpi">縮短檢索時間 80%</div>
+                            <div class="desc">AI 高亮與即時篩選，迅速收斂結果</div>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <img class="icon-20" src="https://api.iconify.design/material-symbols:target.svg">
+                        <div>
+                            <div class="kpi">提高命中率 30%</div>
+                            <div class="desc">結構化摘要與引用強化，精準找到關鍵</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./_mobile-toggle.js"></script>
+</body>
+</html>

@@ -1,17 +1,101 @@
-<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>法官傾向 - LawsOwl</title><link rel="stylesheet" href="/overview-styles.css?v=1.0.0"><link rel="stylesheet" href="../overview-styles.css?v=1.0.0"><link rel="icon" href="https://api.iconify.design/material-symbols:owl.svg"></head><body><div class="container"><nav class="sidebar"><div class="sidebar-header"><div class="logo"><img src="https://api.iconify.design/material-symbols:owl.svg" alt="owl" style="filter: invert(1);width:50px;height:50px;vertical-align:-4px;margin-right:8px;"><span style="font-size: 2rem;">LawsOwl</span></div></div><div class="nav-section"><div class="nav-section-title">導覽</div><a href="./" class="nav-item">主頁</a><a href="./board.html" class="nav-item">知識圖板</a><a href="./case-search.html" class="nav-item">判決查找</a><a href="./lawyer.html" class="nav-item">律師戰歷</a><a href="./judge.html" class="nav-item active">法官傾向</a><a href="./ai-pleading.html" class="nav-item">訴狀生成</a></div></nav><main class="main-content"><header class="page-header hero"><h1 class="page-title">法官傾向</h1><p class="page-subtitle">裁判傾向 + 代表案例 + 特徵標籤</p></header><section class="content-section"><h2 class="section-title">功能摘要</h2><ul class="feature-list"><li>六維度雷達圖，快速掌握裁判傾向</li><li>案件類型與結果分佈，支援切換視圖</li><li>代表案例清單與特徵標籤</li></ul></section></main></div><script src="./_mobile-toggle.js"></script></body></html>
-<button class="mobile-toggle" aria-controls="sidebar" aria-expanded="false">☰ 導覽</button><div class="sidebar-backdrop" aria-hidden="true"></div>
-<section class="content-section"><h2 class="section-title">關鍵畫面</h2><div class="screens-grid">
-<div class="screenshot-card"><div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="shot">雷達圖</div><div class="caption">六維度裁判傾向，快速掌握偏好</div></div>
-<div class="screenshot-card"><div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="shot">結果分佈</div><div class="caption">原告/被告/部分勝訴比例一目了然</div></div>
-<div class="screenshot-card"><div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="shot">代表案例</div><div class="caption">具代表性的裁判與標籤特色</div></div>
-</div></section>
-<section class="content-section"><h2 class="section-title">流程</h2><div class="flow">
-<div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:search.svg">選擇法官</div><div class="arrow">→</div>
-<div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:database.svg">彙整裁判</div><div class="arrow">→</div>
-<div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:insights.svg">傾向分析</div>
-</div></section>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法官傾向 - LawsOwl</title>
+    <link rel="stylesheet" href="./overview-styles.css?v=1.0.0">
+    <link rel="icon" href="https://api.iconify.design/material-symbols:owl.svg">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="https://api.iconify.design/material-symbols:owl.svg" alt="owl" style="filter: invert(1);width:50px;height:50px;vertical-align:-4px;margin-right:8px;">
+                    <span style="font-size: 2rem;">LawsOwl</span>
+                </div>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">導覽</div>
+                <a href="./" class="nav-item">主頁</a>
+                <a href="./board.html" class="nav-item">知識圖板</a>
+                <a href="./case-search.html" class="nav-item">判決查找</a>
+                <a href="./lawyer.html" class="nav-item">律師戰歷</a>
+                <a href="./judge.html" class="nav-item active">法官傾向</a>
+                <a href="./ai-pleading.html" class="nav-item">訴狀生成</a>
+            </div>
+        </nav>
 
-<section class="content-section"><h2 class="section-title">價值主張</h2><div class="value-grid">
-  <div class="value-card"><img class="icon-20" src="https://api.iconify.design/material-symbols:radar.svg"><div><div class="kpi">傾向分析視覺化</div><div class="desc">降低猜測風險，溝通更有依據</div></div></div>
-  <div class="value-card"><img class="icon-20" src="https://api.iconify.design/material-symbols:insights.svg"><div><div class="kpi">決策更快更穩</div><div class="desc">代表案例與分佈圖輔助決策</div></div></div>
-</div></section>
+        <main class="main-content">
+            <header class="page-header hero">
+                <h1 class="page-title">法官傾向</h1>
+                <p class="page-subtitle">裁判傾向 + 代表案例 + 特徵標籤</p>
+            </header>
+
+            <section class="content-section">
+                <h2 class="section-title">功能摘要</h2>
+                <ul class="feature-list">
+                    <li>六維度雷達圖，快速掌握裁判傾向</li>
+                    <li>案件類型與結果分佈，支援切換視圖</li>
+                    <li>代表案例清單與特徵標籤</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">關鍵畫面</h2>
+                <div class="screens-grid">
+                    <div class="screenshot-card">
+                        <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="shot">雷達圖</div>
+                        <div class="caption">六維度裁判傾向，快速掌握偏好</div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="shot">結果分佈</div>
+                        <div class="caption">原告/被告/部分勝訴比例一目了然</div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="shot">代表案例</div>
+                        <div class="caption">具代表性的裁判與標籤特色</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">流程</h2>
+                <div class="flow">
+                    <div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:search.svg">選擇法官</div>
+                    <div class="arrow">→</div>
+                    <div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:database.svg">彙整裁判</div>
+                    <div class="arrow">→</div>
+                    <div class="step"><img class="icon-24" src="https://api.iconify.design/material-symbols:insights.svg">傾向分析</div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">價值主張</h2>
+                <div class="value-grid">
+                    <div class="value-card">
+                        <img class="icon-20" src="https://api.iconify.design/material-symbols:radar.svg">
+                        <div>
+                            <div class="kpi">傾向分析視覺化</div>
+                            <div class="desc">降低猜測風險，溝通更有依據</div>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <img class="icon-20" src="https://api.iconify.design/material-symbols:insights.svg">
+                        <div>
+                            <div class="kpi">決策更快更穩</div>
+                            <div class="desc">代表案例與分佈圖輔助決策</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./_mobile-toggle.js"></script>
+</body>
+</html>
