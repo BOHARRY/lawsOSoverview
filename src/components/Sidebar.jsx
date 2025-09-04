@@ -15,9 +15,18 @@ function Sidebar() {
   useEffect(() => {
     const handleScroll = () => {
       if (isMobile()) {
-        // 移動端：滾動超過 100px 或者在頁面頂部時顯示按鈕
-        const scrolled = window.scrollY > 100 || window.scrollY === 0
-        setShowButton(scrolled)
+        // 移動端：使用滾動百分比邏輯（與原始版本一致）
+        const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
+
+        if (scrollPercent > 0.3) { // 滾動到 30% 時顯示
+          setShowButton(true)
+        } else {
+          setShowButton(false)
+          // 如果按鈕隱藏時側邊欄是開啟的，則關閉它
+          if (isOpen) {
+            setIsOpen(false)
+          }
+        }
       } else {
         // 桌面端：隱藏按鈕
         setShowButton(false)
@@ -37,7 +46,7 @@ function Sidebar() {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, [isOpen]) // 添加 isOpen 依賴
 
   // 處理 ESC 鍵關閉側邊欄
   useEffect(() => {
@@ -58,6 +67,20 @@ function Sidebar() {
   const closeSidebar = () => {
     setIsOpen(false)
   }
+
+  // 處理 body 類的添加/移除，用於 CSS 動畫
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('sidebar-open')
+    } else {
+      document.body.classList.remove('sidebar-open')
+    }
+
+    // 清理函數：組件卸載時移除類
+    return () => {
+      document.body.classList.remove('sidebar-open')
+    }
+  }, [isOpen])
 
   const isActive = (path) => {
     return location.pathname === path
