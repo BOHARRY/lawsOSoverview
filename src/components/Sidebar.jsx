@@ -6,17 +6,37 @@ function Sidebar() {
   const [showButton, setShowButton] = useState(false)
   const location = useLocation()
 
-  // 處理滾動事件，決定是否顯示移動端按鈕
+  // 檢查是否為移動端設備
+  const isMobile = () => {
+    return window.innerWidth <= 768
+  }
+
+  // 處理滾動事件和窗口大小變化，決定是否顯示移動端按鈕
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 100
-      setShowButton(scrolled)
+      if (isMobile()) {
+        // 移動端：滾動超過 100px 或者在頁面頂部時顯示按鈕
+        const scrolled = window.scrollY > 100 || window.scrollY === 0
+        setShowButton(scrolled)
+      } else {
+        // 桌面端：隱藏按鈕
+        setShowButton(false)
+        setIsOpen(false) // 桌面端時關閉側邊欄
+      }
+    }
+
+    const handleResize = () => {
+      handleScroll() // 窗口大小變化時重新檢查
     }
 
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
     handleScroll() // 初始檢查
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   // 處理 ESC 鍵關閉側邊欄
@@ -118,7 +138,7 @@ function Sidebar() {
         aria-controls="sidebar"
         aria-expanded={isOpen}
       >
-        {isOpen ? '✕ 關閉' : '☰ 導覽'}
+        {isOpen ? '✕ 關閉' : '☰ 功能導覽'}
       </button>
 
       {/* 背景遮罩 */}
