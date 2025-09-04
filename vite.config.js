@@ -6,9 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/lawsOSoverview/',
   build: {
-    outDir: 'dist',
-    rollupOptions: {
-      input: './public/index.html'
-    }
+    outDir: 'dist'
   }
 })
