@@ -131,16 +131,45 @@ if (Test-Path "index.html") {
 
 # 複製新文件
 Write-Info "📁 複製構建文件..."
-# 先回到 main 分支複製文件
-git checkout main
+# 確保在 main 分支並檢查 dist 目錄
+$currentBranch = git branch --show-current
+if ($currentBranch -ne "main") {
+    git checkout main
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "❌ 無法切換到 main 分支"
+        exit 1
+    }
+}
+
 if (!(Test-Path "dist")) {
     Write-Error "❌ dist 目錄不存在，請先運行構建"
     exit 1
 }
+
+# 創建臨時目錄並複製構建文件
+Write-Info "📦 創建臨時部署目錄..."
+if (Test-Path "temp-deploy") {
+    Remove-Item -Path "temp-deploy" -Recurse -Force
+}
+New-Item -ItemType Directory -Path "temp-deploy" -Force | Out-Null
 Copy-Item -Path "dist/*" -Destination "temp-deploy" -Recurse -Force
+
+# 切換到 gh-pages 分支
+Write-Info "🔄 切換到 gh-pages 分支進行部署..."
 git checkout gh-pages
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "❌ 無法切換到 gh-pages 分支"
+    # 清理臨時目錄
+    git checkout main
+    Remove-Item -Path "temp-deploy" -Recurse -Force -ErrorAction SilentlyContinue
+    exit 1
+}
+
+# 複製文件到 gh-pages 分支
 Copy-Item -Path "temp-deploy/*" -Destination "." -Recurse -Force
-Remove-Item -Path "temp-deploy" -Recurse -Force
+
+# 清理臨時目錄
+Remove-Item -Path "temp-deploy" -Recurse -Force -ErrorAction SilentlyContinue
 
 # 提交並推送 gh-pages
 Write-Info "📤 提交並推送到 gh-pages..."
@@ -162,6 +191,9 @@ if ($LASTEXITCODE -eq 0) {
 # 回到 main 分支
 Write-Info "🔄 回到 main 分支..."
 git checkout main
+if ($LASTEXITCODE -ne 0) {
+    Write-Warning "⚠️  無法切換回 main 分支，請手動執行: git checkout main"
+}
 
 Write-Success "🎉 部署完成！"
 Write-Info "=================================="
