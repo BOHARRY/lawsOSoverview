@@ -106,6 +106,24 @@ function Sidebar() {
             <span style={{ fontSize: '2rem' }}>LawsOS</span>
           </div>
         </div>
+        <img
+            src="https://api.iconify.design/material-symbols:owl.svg"
+            alt="owl"
+            style={{
+              filter: 'invert(1)',
+              width: '450px',
+              height: '450px',
+              verticalAlign: '-4px',
+              marginRight: '8px',
+              position: 'absolute',
+              bottom: '0%',
+              marginBottom: '-400px',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: '0',
+              opacity: '0.1'
+            }}
+          />
 
         <div className="nav-section">
           <div className="nav-section-title">功能導覽</div>
