@@ -112,26 +112,8 @@ if (!(Test-Path "dist")) {
 
 Write-Info "🚀 開始部署到 GitHub Pages..."
 
-# 切換到 gh-pages 分支
-Write-Info "🔄 切換到 gh-pages 分支..."
-git checkout gh-pages
-if ($LASTEXITCODE -ne 0) {
-    Write-Error "❌ 無法切換到 gh-pages 分支"
-    exit 1
-}
-
-# 清理舊文件
-Write-Info "🧹 清理舊的部署文件..."
-if (Test-Path "assets") {
-    Remove-Item -Path "assets" -Recurse -Force
-}
-if (Test-Path "index.html") {
-    Remove-Item -Path "index.html" -Force
-}
-
-# 複製新文件
-Write-Info "📁 複製構建文件..."
 # 確保在 main 分支並檢查 dist 目錄
+Write-Info "📁 準備構建文件..."
 $currentBranch = git branch --show-current
 if ($currentBranch -ne "main") {
     git checkout main
@@ -155,7 +137,7 @@ New-Item -ItemType Directory -Path "temp-deploy" -Force | Out-Null
 Copy-Item -Path "dist/*" -Destination "temp-deploy" -Recurse -Force
 
 # 切換到 gh-pages 分支
-Write-Info "🔄 切換到 gh-pages 分支進行部署..."
+Write-Info "🔄 切換到 gh-pages 分支..."
 git checkout gh-pages
 if ($LASTEXITCODE -ne 0) {
     Write-Error "❌ 無法切換到 gh-pages 分支"
@@ -165,7 +147,17 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# 複製文件到 gh-pages 分支
+# 清理舊文件
+Write-Info "🧹 清理舊的部署文件..."
+if (Test-Path "assets") {
+    Remove-Item -Path "assets" -Recurse -Force
+}
+if (Test-Path "index.html") {
+    Remove-Item -Path "index.html" -Force
+}
+
+# 複製新文件到 gh-pages 分支
+Write-Info "📁 複製構建文件到 gh-pages 分支..."
 Copy-Item -Path "temp-deploy/*" -Destination "." -Recurse -Force
 
 # 清理臨時目錄
