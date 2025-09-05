@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 
 function BoardPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -182,39 +183,66 @@ function BoardPage() {
           />
           知識圖板
         </h1>
-        <p className="page-subtitle">開放式白板 × 卡片式案件脈絡整理 × AI 智慧分析</p>
+        <p className="page-subtitle">提供開放式的白板，運用卡片式的方式整理案件脈絡和資訊， 透過AI圖板的功能，獲得稀有援引資料、潛在有利見解、關鍵致勝因子以及攻防切角。</p>
       </header>
 
-      {/* 功能摘要 */}
-      <section className="content-section">
-        <h2 className="section-title">功能摘要</h2>
-        <div className="summary-card">
-          <div className="summary-content">
-            <p className="summary-text">
-              提供<strong>開放式的白板</strong>，運用<strong>卡片式的方式</strong>整理案件脈絡和資訊，
-              透過<strong>AI圖板的功能</strong>，獲得稀有援引資料、潛在有利見解、關鍵致勝因子以及攻防切角。
-            </p>
+      {/* 圖板示意 */}
+      <section className="content-section3">
+        <div className="image-viewer-container">
+
+          <div className="viewer-wrapper">
+            <TransformWrapper
+              initialScale={1}
+              minScale={0.2}
+              maxScale={8}
+              wheel={{ step: 0.15 }}
+              pinch={{ step: 5 }}
+              doubleClick={{ step: 0.7 }}
+              centerOnInit={true}
+            >
+              {({ zoomIn, zoomOut, resetTransform }) => (
+                <>
+                  <div className="viewer-controls-overlay">
+                    <button className="control-btn" onClick={() => zoomIn()} title="放大">
+                      <img className="icon-16" src="https://api.iconify.design/material-symbols:zoom-in.svg" alt="放大" />
+                    </button>
+                    <button className="control-btn" onClick={() => zoomOut()} title="縮小">
+                      <img className="icon-16" src="https://api.iconify.design/material-symbols:zoom-out.svg" alt="縮小" />
+                    </button>
+                    <button className="control-btn" onClick={() => resetTransform()} title="重置視圖">
+                      <img className="icon-16" src="https://api.iconify.design/material-symbols:refresh.svg" alt="重置" />
+                    </button>
+                  </div>
+                  <TransformComponent wrapperClass="transform-wrapper" contentClass="transform-content">
+                    <img
+                      src="/lawsOSoverview/board_sample_pic.jpg"
+                      alt="知識圖板示意圖"
+                      className="board-sample-image"
+                      draggable={false}
+                    />
+                  </TransformComponent>
+                </>
+              )}
+            </TransformWrapper>
           </div>
-          <div className="summary-features">
-            <div className="feature-tag">
-              <img className="icon-16" src="https://api.iconify.design/material-symbols:dashboard-outline.svg" />
-              開放式白板
+
+          <div className="viewer-instructions">
+            <div className="instruction-item">
+              <img className="icon-16" src="https://api.iconify.design/material-symbols:drag-pan.svg" alt="拖拽" />
+              <span>拖拽移動視圖</span>
             </div>
-            <div className="feature-tag">
-              <img className="icon-16" src="https://api.iconify.design/material-symbols:view-agenda-outline.svg" />
-              卡片式整理
+            <div className="instruction-item">
+              <img className="icon-16" src="https://api.iconify.design/material-symbols:zoom-in.svg" alt="縮放" />
+              <span>滾輪縮放圖片</span>
             </div>
-            <div className="feature-tag">
-              <img className="icon-16" src="https://api.iconify.design/material-symbols:auto-awesome.svg" />
-              AI 智慧分析
-            </div>
-            <div className="feature-tag">
-              <img className="icon-16" src="https://api.iconify.design/material-symbols:insights.svg" />
-              攻防策略
+            <div className="instruction-item">
+              <img className="icon-16" src="https://api.iconify.design/material-symbols:touch-app.svg" alt="雙擊" />
+              <span>雙擊快速縮放</span>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* 圖板卡片介紹 */}
       <section className="content-section">
@@ -282,204 +310,94 @@ function BoardPage() {
         </div>
       </section>
 
+      
+      {/* 價值主張 */}
+      <div className="kpi-strip-title">
+        價值主張
+      </div>
+
+      <section className="content-section2" aria-label="價值主張">
+        <div className="kpi-strip">
+          <div className="kpi-item" style={{padding:'18px 8px'}}>
+            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>案件理解速度</div>
+            <div
+              className="kpi-value"
+              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--brand-green)'}}
+            >
+              +200%
+            </div>
+          </div>
+          <div className="kpi-item" style={{padding:'18px 8px', borderLeft:'1px solid var(--border)'}}>
+            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>資訊整理效率</div>
+            <div
+              className="kpi-value"
+              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--brand-green)'}}
+            >
+              +150%
+            </div>
+          </div>
+          <div className="kpi-item" style={{padding:'18px 8px', borderLeft:'1px solid var(--border)'}}>
+            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>發現隱藏機會</div>
+            <div
+              className="kpi-value"
+              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--brand-green)'}}
+            >
+              +300%
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* AI 圖板功能 */}
       <section className="content-section">
         <h2 className="section-title">AI 圖板功能</h2>
-        <div className="ai-features-grid">
-          <div className="ai-feature-card">
-            <div className="ai-icon-wrapper">
-              <img className="ai-icon" src="https://api.iconify.design/material-symbols:library-books-outline.svg" />
-            </div>
-            <h3>稀有援引資料</h3>
-            <p>AI 深度挖掘罕見判例、特殊見解，發現對案件有利的稀有法律資源</p>
-            <div className="ai-examples">
-              <span className="example-tag">罕見判例</span>
-              <span className="example-tag">特殊見解</span>
-              <span className="example-tag">國外案例</span>
+        <div className="features-grid">
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:library-books-outline.svg" alt="rare-resources" />
+            <div className="feature-content">
+              <div className="feature-title">稀有援引資料</div>
+              <div className="feature-description">AI 深度挖掘罕見判例、特殊見解，發現對案件有利的稀有法律資源。</div>
             </div>
           </div>
-
-          <div className="ai-feature-card">
-            <div className="ai-icon-wrapper">
-              <img className="ai-icon" src="https://api.iconify.design/material-symbols:lightbulb-outline.svg" />
-            </div>
-            <h3>潛在有利見解</h3>
-            <p>智慧分析案件脈絡，識別可能被忽略的有利論點和法律觀點</p>
-            <div className="ai-examples">
-              <span className="example-tag">隱藏論點</span>
-              <span className="example-tag">新興觀點</span>
-              <span className="example-tag">反向思考</span>
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:lightbulb-outline.svg" alt="insights" />
+            <div className="feature-content">
+              <div className="feature-title">潛在有利見解</div>
+              <div className="feature-description">智慧分析案件脈絡，識別可能被忽略的有利論點和法律觀點。</div>
             </div>
           </div>
-
-          <div className="ai-feature-card">
-            <div className="ai-icon-wrapper">
-              <img className="ai-icon" src="https://api.iconify.design/material-symbols:key-outline.svg" />
-            </div>
-            <h3>關鍵致勝因子</h3>
-            <p>基於大數據分析，識別影響案件結果的關鍵要素和決定性因素</p>
-            <div className="ai-examples">
-              <span className="example-tag">核心爭點</span>
-              <span className="example-tag">關鍵證據</span>
-              <span className="example-tag">程序要點</span>
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:key-outline.svg" alt="key-factors" />
+            <div className="feature-content">
+              <div className="feature-title">關鍵致勝因子</div>
+              <div className="feature-description">基於大數據分析，識別影響案件結果的關鍵要素和決定性因素。</div>
             </div>
           </div>
-
-          <div className="ai-feature-card">
-            <div className="ai-icon-wrapper">
-              <img className="ai-icon" src="https://api.iconify.design/material-symbols:swords.svg" />
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:swords.svg" alt="strategy" />
+            <div className="feature-content">
+              <div className="feature-title">攻防策略優化</div>
+              <div className="feature-description">提供多角度攻防策略建議，包含主張論述、反駁要點、風險評估。</div>
             </div>
-            <h3>攻防切角</h3>
-            <p>提供多角度攻防策略建議，包含主張論述、反駁要點、風險評估</p>
-            <div className="ai-examples">
-              <span className="example-tag">攻擊策略</span>
-              <span className="example-tag">防禦要點</span>
-              <span className="example-tag">風險控制</span>
+          </div>
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:timeline.svg" alt="timeline" />
+            <div className="feature-content">
+              <div className="feature-title">案件時程規劃</div>
+              <div className="feature-description">智慧分析程序節點，自動生成最佳時程安排和關鍵期限提醒。</div>
+            </div>
+          </div>
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:analytics-outline.svg" alt="prediction" />
+            <div className="feature-content">
+              <div className="feature-title">勝訴機率預測</div>
+              <div className="feature-description">結合歷史數據和案件特徵，提供科學化的勝訴機率評估和建議。</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 價值主張 */}
-      <section className="content-section">
-        <h2 className="section-title">價值主張</h2>
-        <div className="value-proposition-grid">
-          <div className="value-prop-card primary">
-            <div className="value-icon">
-              <img src="https://api.iconify.design/material-symbols:dashboard-outline.svg" />
-            </div>
-            <h3>視覺化案件管理</h3>
-            <p>開放式白板設計，將複雜案件脈絡轉化為直觀的視覺化圖表，一目了然掌握全局</p>
-            <div className="value-metrics">
-              <span className="metric">案件理解速度 <strong>+200%</strong></span>
-            </div>
-          </div>
-
-          <div className="value-prop-card secondary">
-            <div className="value-icon">
-              <img src="https://api.iconify.design/material-symbols:view-agenda-outline.svg" />
-            </div>
-            <h3>卡片式知識整理</h3>
-            <p>模組化卡片系統，靈活組織案件資訊，支援拖拽編輯，讓知識管理更加高效</p>
-            <div className="value-metrics">
-              <span className="metric">資訊整理效率 <strong>+150%</strong></span>
-            </div>
-          </div>
-
-          <div className="value-prop-card accent">
-            <div className="value-icon">
-              <img src="https://api.iconify.design/material-symbols:auto-awesome.svg" />
-            </div>
-            <h3>AI 智慧洞察</h3>
-            <p>深度 AI 分析提供稀有資料、有利見解、致勝因子，發現人工難以察覺的關鍵資訊</p>
-            <div className="value-metrics">
-              <span className="metric">發現隱藏機會 <strong>+300%</strong></span>
-            </div>
-          </div>
-
-          <div className="value-prop-card highlight">
-            <div className="value-icon">
-              <img src="https://api.iconify.design/material-symbols:strategy-outline.svg" />
-            </div>
-            <h3>攻防策略優化</h3>
-            <p>多角度攻防切角分析，提供精準的策略建議，大幅提升案件勝訴機率</p>
-            <div className="value-metrics">
-              <span className="metric">策略精準度 <strong>+180%</strong></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 圖板示意 */}
-      <section className="content-section">
-        <h2 className="section-title">圖板示意</h2>
-        <div className="board-demo">
-          <div className="demo-board">
-            <div className="demo-header">
-              <div className="demo-title">案件：智慧財產權侵權糾紛</div>
-              <div className="demo-tools">
-                <span className="tool-btn">🔍</span>
-                <span className="tool-btn">➕</span>
-                <span className="tool-btn">🔗</span>
-                <span className="tool-btn">🤖</span>
-              </div>
-            </div>
-            <div className="demo-canvas">
-              <div className="demo-card case-card" style={{top: '20px', left: '50px'}}>
-                <div className="card-type">案件</div>
-                <div className="card-title">專利侵權案</div>
-              </div>
-              <div className="demo-card law-card" style={{top: '20px', left: '200px'}}>
-                <div className="card-type">法條</div>
-                <div className="card-title">專利法第96條</div>
-              </div>
-              <div className="demo-card evidence-card" style={{top: '120px', left: '50px'}}>
-                <div className="card-type">證據</div>
-                <div className="card-title">技術比對報告</div>
-              </div>
-              <div className="demo-card strategy-card" style={{top: '120px', left: '200px'}}>
-                <div className="card-type">AI策略</div>
-                <div className="card-title">攻防切角分析</div>
-              </div>
-              <div className="demo-connection" style={{top: '45px', left: '150px', width: '50px'}}></div>
-              <div className="demo-connection vertical" style={{top: '70px', left: '75px', height: '50px'}}></div>
-              <div className="demo-connection" style={{top: '145px', left: '150px', width: '50px'}}></div>
-            </div>
-          </div>
-          <div className="demo-features">
-            <div className="demo-feature">
-              <img className="icon-16" src="https://api.iconify.design/material-symbols:drag-pan.svg" />
-              拖拽式編輯
-            </div>
-            <div className="demo-feature">
-              <img className="icon-16" src="https://api.iconify.design/material-symbols:auto-awesome.svg" />
-              AI 智慧連結
-            </div>
-            <div className="demo-feature">
-              <img className="icon-16" src="https://api.iconify.design/material-symbols:group-work.svg" />
-              即時協作
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 使用流程 */}
-      <section className="content-section">
-        <h2 className="section-title">使用流程</h2>
-        <div className="workflow-steps">
-          <div className="workflow-step">
-            <div className="step-number">1</div>
-            <div className="step-content">
-              <h3>創建白板</h3>
-              <p>建立新的案件圖板，設定基本資訊</p>
-            </div>
-          </div>
-          <div className="workflow-arrow">→</div>
-          <div className="workflow-step">
-            <div className="step-number">2</div>
-            <div className="step-content">
-              <h3>添加卡片</h3>
-              <p>拖拽添加案件、法條、證據等卡片</p>
-            </div>
-          </div>
-          <div className="workflow-arrow">→</div>
-          <div className="workflow-step">
-            <div className="step-number">3</div>
-            <div className="step-content">
-              <h3>建立連結</h3>
-              <p>連接相關卡片，建立邏輯關係</p>
-            </div>
-          </div>
-          <div className="workflow-arrow">→</div>
-          <div className="workflow-step">
-            <div className="step-number">4</div>
-            <div className="step-content">
-              <h3>AI 分析</h3>
-              <p>啟動 AI 分析，獲得智慧洞察</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </>
   )
 }
