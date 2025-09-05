@@ -671,20 +671,40 @@ body {
     color: white;
 }
 
-.badge-case {
+.badge-case-planning {
     background: var(--brand-green);
 }
 
-.badge-law {
+.badge-auxiliary-cards {
     background: #3b82f6;
 }
 
-.badge-evidence {
+.badge-smart-law {
+    background: #8b5cf6;
+}
+
+.badge-common-analysis {
+    background: #06b6d4;
+}
+
+.badge-case-judgment {
+    background: #ef4444;
+}
+
+.badge-mainstream-judgment {
     background: #f59e0b;
 }
 
-.badge-strategy {
-    background: #ef4444;
+.badge-citation-analysis {
+    background: #84cc16;
+}
+
+.badge-anomaly-cases {
+    background: #f97316;
+}
+
+.badge-pleading-draft {
+    background: #ec4899;
 }
 
 .slide-description {
