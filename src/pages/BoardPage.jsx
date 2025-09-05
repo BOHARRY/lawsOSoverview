@@ -251,11 +251,13 @@ function BoardPage() {
                     <p className="slide-description">{cardData[currentSlide].description}</p>
                   </div>
                   <div className="slide-details">
-                    {cardData[currentSlide].details.map((detail, index) => (
-                      <div key={index} className="detail-item">
-                        {detail}
-                      </div>
-                    ))}
+                    <div className="details-container">
+                      {cardData[currentSlide].details.map((detail, index) => (
+                        <div key={index} className="detail-item">
+                          {detail}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -608,7 +608,7 @@ body {
 }
 
 .slide-image {
-    width: 40%;
+    width: 60%;
     position: relative;
     overflow: hidden;
 }
@@ -638,10 +638,11 @@ body {
 }
 
 .slide-content {
-    width: 60%;
+    width: 40%;
     padding: 24px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .slide-header {
@@ -715,25 +716,35 @@ body {
 }
 
 .slide-details {
-    flex: 1;
+    margin-top: 16px;
+}
+
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .detail-item {
-    padding: 10px 0;
-    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    font-size: 13px;
     color: #475569;
-    border-left: 4px solid var(--brand-green);
-    padding-left: 16px;
-    margin-bottom: 12px;
-    background: #f8fafc;
-    border-radius: 0 8px 8px 0;
-    padding-right: 16px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
     transition: all 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .detail-item:hover {
-    background: #f0fdf4;
-    transform: translateX(4px);
+    background: var(--brand-green);
+    color: white;
+    border-color: var(--brand-green);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* 指示點 */
