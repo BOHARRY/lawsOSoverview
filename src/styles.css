@@ -510,7 +510,6 @@ body {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     border-radius: 12px;
     padding: 24px;
-    margin-bottom: 32px;
     border: 1px solid #e2e8f0;
 }
 
@@ -799,7 +798,6 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--brand-green), #10b981);
 }
 
 .ai-feature-card:hover {
