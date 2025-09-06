@@ -310,47 +310,11 @@ function BoardPage() {
         </div>
       </section>
 
-      
-      {/* 價值主張 */}
-      <div className="kpi-strip-title">
-        價值主張
-      </div>
 
-      <section className="content-section2" aria-label="價值主張">
-        <div className="kpi-strip">
-          <div className="kpi-item" style={{padding:'18px 8px'}}>
-            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>案件理解速度</div>
-            <div
-              className="kpi-value"
-              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--brand-green)'}}
-            >
-              +200%
-            </div>
-          </div>
-          <div className="kpi-item" style={{padding:'18px 8px', borderLeft:'1px solid var(--border)'}}>
-            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>資訊整理效率</div>
-            <div
-              className="kpi-value"
-              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--brand-green)'}}
-            >
-              +150%
-            </div>
-          </div>
-          <div className="kpi-item" style={{padding:'18px 8px', borderLeft:'1px solid var(--border)'}}>
-            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>發現隱藏機會</div>
-            <div
-              className="kpi-value"
-              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--brand-green)'}}
-            >
-              +300%
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* AI 圖板功能 */}
       <section className="content-section">
-        <h2 className="section-title">AI 圖板功能</h2>
+        <h2 className="section-title">智慧圖板功能</h2>
         <div className="features-grid">
           <div className="feature-card">
             <img className="feature-icon" src="https://api.iconify.design/material-symbols:library-books-outline.svg" alt="rare-resources" />

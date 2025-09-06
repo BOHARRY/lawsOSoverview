@@ -153,14 +153,7 @@ function Sidebar() {
             className={`nav-item ${isActive('/lawyer') ? 'active' : ''}`}
             onClick={closeSidebar}
           >
-            律師戰歷
-          </Link>
-          <Link 
-            to="/judge" 
-            className={`nav-item ${isActive('/judge') ? 'active' : ''}`}
-            onClick={closeSidebar}
-          >
-            法官傾向
+            法務情資雷達站
           </Link>
           <Link 
             to="/ai-pleading" 

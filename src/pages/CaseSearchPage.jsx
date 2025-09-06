@@ -5,8 +5,15 @@ function CaseSearchPage() {
   return (
     <>
       <header className="page-header hero">
-        <h1 className="page-title">判決智慧搜索</h1>
-        <p className="page-subtitle">運用智慧檢索快速獲得關鍵判決，並進行更高效的整合管理。</p>
+        <h1 className="page-title">
+          <img
+            src="https://api.iconify.design/majesticons:search-text-line.svg"
+            alt="search"
+            style={{width:'38px', height:'38px', verticalAlign:'-6px', marginRight:'10px'}}
+          />
+          判決智慧搜索
+        </h1>
+        <p className="page-subtitle">運用智慧檢索快速獲得關鍵判決，讓律師專注策略，繁瑣檢索交給我們。</p>
       </header>
 
       {/* 功能展示區塊 - 現代化 Container Query 布局 */}
@@ -84,42 +91,41 @@ function CaseSearchPage() {
         </div>
       </section>
 
-      <div className="kpi-strip-title">
-        價值主張
-      </div>
-
-      {/* KPI strip above the three core cards */}
-      <section className="content-section2" aria-label="價值主張">
-        <div className="kpi-strip">
-          <div className="kpi-item" style={{padding:'18px 8px'}}>
-            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>案件理解速度</div>
-            <div
-              className="kpi-value"
-              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--kpi-text)'}}
-            >
-              +200%
+      {/* 智慧搜索核心功能 */}
+      <section className="content-section">
+        <h2 className="section-title">智慧搜索核心功能</h2>
+        <div className="features-grid">
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/iconamoon:lightning-2-fill.svg" alt="smart-search" />
+            <div className="feature-content">
+              <div className="feature-title">智慧檢索與爭點定位</div>
+              <div className="feature-description">透過 AI 驅動的智慧檢索，快速抓取判決核心摘要與關鍵段落，讓律師第一時間聚焦案件重點，節省大量閱讀時間。</div>
             </div>
           </div>
-          <div className="kpi-item" style={{padding:'18px 8px', borderLeft:'1px solid var(--border)'}}>
-            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>資訊整理效率</div>
-            <div
-              className="kpi-value"
-              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--kpi-text)'}}
-            >
-              +150%
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:folder-managed-outline.svg" alt="auto-archive" />
+            <div className="feature-content">
+              <div className="feature-title">自動歸檔與工作區管理</div>
+              <div className="feature-description">每次搜尋都自動生成專屬工作區，結果可分頁保存、拖曳至圖板、標記分類，實現高效案件知識管理。</div>
             </div>
           </div>
-          <div className="kpi-item" style={{padding:'18px 8px', borderLeft:'1px solid var(--border)'}}>
-            <div className="kpi-title" style={{fontSize:'24px', color:'var(--kpi-text)'}}>發現隱藏機會</div>
-            <div
-              className="kpi-value"
-              style={{fontSize:'54px', fontWeight:'800', lineHeight:'1.1', marginTop:'6px', color:'var(--kpi-text)'}}
-            >
-              +300%
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:quick-reference-outline.svg" alt="quick-navigation" />
+            <div className="feature-content">
+              <div className="feature-title">判決書快速導覽</div>
+              <div className="feature-description">內建爭點提示，點擊即可直達相關段落，避免翻頁耗時，讓資料查找像瀏覽網站一樣直覺流暢。</div>
+            </div>
+          </div>
+          <div className="feature-card">
+            <img className="feature-icon" src="https://api.iconify.design/material-symbols:integration-instructions-outline.svg" alt="data-integration" />
+            <div className="feature-content">
+              <div className="feature-title">案件資料即時整合</div>
+              <div className="feature-description">自動整理並永久保存檢索結果，支援跨案件比對和策略規劃，讓律師能以最少時間獲取最完整的資訊。</div>
             </div>
           </div>
         </div>
       </section>
+
     </>
   )
 }
