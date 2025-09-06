@@ -13,7 +13,7 @@ function BoardPage() {
       badge: '基礎',
       icon: 'https://api.iconify.design/material-symbols:assignment-outline.svg',
       description: '主導案件脈絡和立場的底層卡片，輸入案由，法院層級，辯護立場和案件描述，為後續案件分析建立基礎索引。',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '📋 案由與法院層級設定',
         '⚖️ 辯護立場明確定義',
@@ -27,7 +27,7 @@ function BoardPage() {
       badge: '資料',
       icon: 'https://api.iconify.design/material-symbols:sticky-note-2-outline.svg',
       description: '便條紙卡、爭點卡、主張卡、證據卡，整理案件相關的輔助資料，作為後續AI類卡片的重要資料索引。',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '📝 便條紙卡記錄要點',
         '⚡ 爭點卡整理爭議',
@@ -41,7 +41,7 @@ function BoardPage() {
       badge: 'AI',
       icon: 'https://api.iconify.design/material-symbols:gavel.svg',
       description: '除了搜尋相關案件法條，並且支援AI語意搜索功能，確保該案件有法源相關的依據。',
-      image: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '🔍 相關法條智慧搜尋',
         '🤖 AI語意搜索功能',
@@ -55,7 +55,7 @@ function BoardPage() {
       badge: '分析',
       icon: 'https://api.iconify.design/material-symbols:analytics-outline.svg',
       description: '連結白板上的多個判決參考進行推理，提供判決的整合資訊，分析多個判決的共通性和關聯性，並提供援引脈絡。',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '🔗 多判決連結推理',
         '📊 判決整合資訊',
@@ -69,7 +69,7 @@ function BoardPage() {
       badge: '核心',
       icon: 'https://api.iconify.design/material-symbols:fact-check-outline.svg',
       description: '根據案由和立場，從資料庫中提取相關案例，並提供防禦比例和風險因素等洞察資訊，同時透過該卡片生成更多智慧卡片資訊。',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '📊 相關案例提取',
         '🛡️ 防禦比例分析',
@@ -83,7 +83,7 @@ function BoardPage() {
       badge: '策略',
       icon: 'https://api.iconify.design/material-symbols:summarize-outline.svg',
       description: '根據案件判決分析，獲得摘要、攻防策略、原告可能弱點和抗辯要點等資訊，為案件提供更多的切點面向。',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '📋 判決摘要歸納',
         '⚔️ 攻防策略分析',
@@ -97,7 +97,7 @@ function BoardPage() {
       badge: '參考',
       icon: 'https://api.iconify.design/material-symbols:link-outline.svg',
       description: '根據案件判決分析，獲得相關判決中的援引判例，並提供可援引的參考價值。',
-      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '📚 援引判例提取',
         '🔗 判決關聯分析',
@@ -111,7 +111,7 @@ function BoardPage() {
       badge: '洞察',
       icon: 'https://api.iconify.design/material-symbols:warning-outline.svg',
       description: '根據案件判決分析，從提取的相關判決中，了解資料庫中相關的特殊實際判決，提供更多洞察機會。',
-      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '🔍 特殊判決識別',
         '💡 異常案例分析',
@@ -125,7 +125,7 @@ function BoardPage() {
       badge: '生成',
       icon: 'https://api.iconify.design/material-symbols:description-outline.svg',
       description: '根據案件規劃卡、輔助卡群、智慧分析卡等卡片，系統整合資訊後生成各類訴狀，且隨時可以進行卡片調整，保持智慧訴狀生成的公開透明性。',
-      image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop&auto=format',
+      image: 'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxNTI0NTMxNjk0Ny1pbWFnZS1rcHFrNTZwMC5qcGc.jpg',
       details: [
         '📝 多卡片資訊整合',
         '⚖️ 各類訴狀生成',
