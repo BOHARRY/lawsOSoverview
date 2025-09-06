@@ -30,7 +30,7 @@ function CaseSearchPage() {
 
             <div className="case-feature-image">
               <div className="case-feature-image-container">
-                <img src="https://via.placeholder.com/400x300/56b77a/ffffff?text=智慧檢索提示" alt="智慧檢索提示界面" />
+                <img src="/lawsOSoverview/CaseSearch1.jpg?3" alt="智慧檢索提示界面" />
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ function CaseSearchPage() {
 
             <div className="case-feature-image case-feature-reverse">
               <div className="case-feature-image-container">
-                <img src="https://via.placeholder.com/400x300/4ade80/ffffff?text=判決爭點提示" alt="判決爭點提示界面" />
+                <img src="/lawsOSoverview/CaseSearch2.jpg?3" alt="判決爭點提示界面" />
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ function CaseSearchPage() {
 
             <div className="case-feature-image">
               <div className="case-feature-image-container">
-                <img src="https://via.placeholder.com/400x300/22c55e/ffffff?text=自動歸檔分頁" alt="自動歸檔分頁界面" />
+                <img src="/lawsOSoverview/CaseSearch4.jpg?3" alt="自動歸檔分頁界面" />
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ function CaseSearchPage() {
 
             <div className="case-feature-image case-feature-reverse">
               <div className="case-feature-image-container">
-                <img src="https://via.placeholder.com/400x300/16a34a/ffffff?text=工作區案件整理" alt="工作區案件整理界面" />
+                <img src="/lawsOSoverview/CaseSearch3.jpg?3" alt="工作區案件整理界面" />
               </div>
             </div>
           </div>
