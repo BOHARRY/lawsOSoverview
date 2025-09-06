@@ -88,8 +88,9 @@ if (!(Test-Path "dist/assets")) {
 
 Write-Success "構建成功"
 
-# 創建一個完全獨立的部署目錄
-$deployDir = "deploy-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+# 創建一個完全獨立的部署目錄（在項目外部）
+$tempPath = [System.IO.Path]::GetTempPath()
+$deployDir = Join-Path $tempPath "lawsos-deploy-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
 Write-Info "創建部署目錄: $deployDir"
 
 New-Item -ItemType Directory -Path $deployDir -Force | Out-Null
