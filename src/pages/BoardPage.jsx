@@ -181,9 +181,9 @@ function BoardPage() {
             alt="board"
             style={{width:'38px', height:'38px', verticalAlign:'-6px', marginRight:'10px'}}
           />
-          知識圖板
+          案件圖板管理
         </h1>
-        <p className="page-subtitle">提供開放式的白板，運用卡片式的方式整理案件脈絡和資訊， 透過AI圖板的功能，獲得稀有援引資料、潛在有利見解、關鍵致勝因子以及攻防切角。</p>
+        <p className="page-subtitle">提供開放式的白板，運用卡片整理案件脈絡和資訊， 透過AI功能獲得稀有援引資料、潛在有利見解、關鍵致勝因子。</p>
       </header>
 
       {/* 圖板示意 */}
@@ -192,7 +192,7 @@ function BoardPage() {
 
           <div className="viewer-wrapper">
             <TransformWrapper
-              initialScale={1}
+              initialScale={4}
               minScale={0.2}
               maxScale={8}
               wheel={{ step: 0.15 }}
@@ -216,7 +216,7 @@ function BoardPage() {
                   <TransformComponent wrapperClass="transform-wrapper" contentClass="transform-content">
                     <img
                       src="/lawsOSoverview/board_sample_pic.jpg"
-                      alt="知識圖板示意圖"
+                      alt="案件圖板管理示意圖"
                       className="board-sample-image"
                       draggable={false}
                     />
@@ -378,20 +378,6 @@ function BoardPage() {
             <div className="feature-content">
               <div className="feature-title">攻防策略優化</div>
               <div className="feature-description">提供多角度攻防策略建議，包含主張論述、反駁要點、風險評估。</div>
-            </div>
-          </div>
-          <div className="feature-card">
-            <img className="feature-icon" src="https://api.iconify.design/material-symbols:timeline.svg" alt="timeline" />
-            <div className="feature-content">
-              <div className="feature-title">案件時程規劃</div>
-              <div className="feature-description">智慧分析程序節點，自動生成最佳時程安排和關鍵期限提醒。</div>
-            </div>
-          </div>
-          <div className="feature-card">
-            <img className="feature-icon" src="https://api.iconify.design/material-symbols:analytics-outline.svg" alt="prediction" />
-            <div className="feature-content">
-              <div className="feature-title">勝訴機率預測</div>
-              <div className="feature-description">結合歷史數據和案件特徵，提供科學化的勝訴機率評估和建議。</div>
             </div>
           </div>
         </div>

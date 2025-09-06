@@ -1034,6 +1034,63 @@ body {
     opacity: 0.7;
 }
 
+/* 功能展示區塊 - Grid 布局樣式 */
+.features-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.feature-block {
+    border-radius: 16px;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 24px;
+    text-align: left;
+}
+
+.feature-block:hover {
+    transform: scale(1.02);
+}
+
+.image-block {
+    background-color: #f8fafc;
+    padding: 0;
+    overflow: hidden;
+}
+
+.image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-block {
+    color: rgb(37, 36, 36);
+    padding: 50px 0px;
+}
+
+.text-block h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: #0f3b2e;
+}
+
+.text-block p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.95;
+    margin: 0;
+}
+
+
+
 .demo-board {
     background: white;
     border-radius: 12px;
@@ -1209,6 +1266,14 @@ body {
     background-color: #f7f7f7;
 }
 
+/* 平板版布局 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .features-grid-container {
+        max-width: 800px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
 /* 響應式設計 */
 @media (max-width: 768px) {
     /* 輪播手機版設計 */
@@ -1315,6 +1380,52 @@ body {
     .control-btn {
         width: 32px;
         height: 32px;
+    }
+
+    body {
+        padding: 15px;
+    }
+
+    /* 響應式功能展示區塊 - Grid 布局 */
+    .features-grid-container {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        gap: 15px;
+    }
+
+    .feature-block {
+        aspect-ratio: 5/3;
+        padding: 15px;
+    }
+
+    .text-block h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .text-block p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    /* 手機版重新排序為完全的圖文交替 */
+    .feature-block:nth-child(1) { order: 1; }  /* 圖片 */
+    .feature-block:nth-child(2) { order: 2; }  /* 文字 */
+    .feature-block:nth-child(3) { order: 4; }  /* 文字 -> 第4位 */
+    .feature-block:nth-child(4) { order: 3; }  /* 圖片 -> 第3位 */
+    .feature-block:nth-child(5) { order: 5; }  /* 圖片 */
+    .feature-block:nth-child(6) { order: 6; }  /* 文字 */
+    .feature-block:nth-child(7) { order: 8; }  /* 文字 -> 第8位 */
+    .feature-block:nth-child(8) { order: 7; }  /* 圖片 -> 第7位 */
+
+    .feature-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .feature-description {
+        font-size: 16px;
+        line-height: 1.5;
     }
 
     .card-title {

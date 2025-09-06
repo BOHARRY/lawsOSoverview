@@ -139,14 +139,14 @@ function Sidebar() {
             className={`nav-item ${isActive('/board') ? 'active' : ''}`}
             onClick={closeSidebar}
           >
-            知識圖板
+            案件圖板管理
           </Link>
           <Link 
             to="/case-search" 
             className={`nav-item ${isActive('/case-search') ? 'active' : ''}`}
             onClick={closeSidebar}
           >
-            判決查找
+            判決智慧搜索
           </Link>
           <Link 
             to="/lawyer" 
