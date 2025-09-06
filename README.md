@@ -61,7 +61,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 # 3. 啟動開發環境
 .\dev.ps1
 ```
-
+定期清理依賴：如果再次遇到問題，運行 npm run dev 前先清理：
+rm -rf node_modules package-lock.json
+npm install
 ### 🔧 手動安裝
 ```bash
 # 1. 安裝依賴
