@@ -187,8 +187,8 @@ if ($LASTEXITCODE -ne 0) {
     Write-Warning "⚠️  無法切換回 main 分支，請手動執行: git checkout main"
 }
 
-Write-Success "🎉 部署完成！"
+Write-Success "部署完成！"
 Write-Info "=================================="
-Write-Info "🌐 網站地址: https://boharry.github.io/lawsOSoverview/"
-Write-Info "⏰ 網站將在 2-5 分鐘內更新"
-Write-Info "💡 提示：如果網站沒有更新，請清除瀏覽器緩存"
+Write-Info "網站地址: https://boharry.github.io/lawsOSoverview/"
+Write-Info "網站將在 2-5 分鐘內更新"
+Write-Info "提示：如果網站沒有更新，請清除瀏覽器緩存"
