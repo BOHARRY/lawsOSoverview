@@ -192,7 +192,7 @@ function BoardPage() {
 
           <div className="viewer-wrapper">
             <TransformWrapper
-              initialScale={4}
+              initialScale={2}
               minScale={0.2}
               maxScale={8}
               wheel={{ step: 0.15 }}
