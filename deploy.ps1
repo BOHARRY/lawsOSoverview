@@ -206,6 +206,41 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
+# 重要：確保臨時目錄在 gh-pages 分支中不存在
+if (Test-Path $tempDir) {
+    Write-Warning "在 gh-pages 分支中發現臨時目錄，這不應該發生"
+    Safe-Cleanup $tempDir
+}
+
+# 從 main 分支複製構建文件到 gh-pages 分支
+Write-Info "從 main 分支複製構建文件..."
+git checkout main -- dist
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "無法從 main 分支複製 dist 目錄"
+    git checkout main
+    exit 1
+}
+
+# 重新創建臨時目錄並複製文件
+Write-Info "重新創建臨時目錄..."
+New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+Copy-Item -Path "dist/index.html" -Destination $tempDir -Force
+Copy-Item -Path "dist/assets" -Destination $tempDir -Recurse -Force
+
+# 複製其他必要的靜態資源（如果存在）
+if (Test-Path "dist/*.jpg") {
+    Copy-Item -Path "dist/*.jpg" -Destination $tempDir -Force
+}
+if (Test-Path "dist/*.png") {
+    Copy-Item -Path "dist/*.png" -Destination $tempDir -Force
+}
+if (Test-Path "dist/*.ico") {
+    Copy-Item -Path "dist/*.ico" -Destination $tempDir -Force
+}
+
+# 清理 dist 目錄（我們不需要在 gh-pages 分支中保留它）
+Safe-Cleanup "dist"
+
 # 安全清理 gh-pages 分支的舊文件
 Write-Info "清理 gh-pages 分支的舊文件..."
 $filesToRemove = @("assets", "index.html", "*.jpg", "*.png", "*.ico")
