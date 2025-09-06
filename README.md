@@ -106,12 +106,21 @@ npm run dev
 
 ### 🚀 部署到 GitHub Pages
 ```powershell
-# 快速部署（日常使用）
+# 🛡️ 安全部署（強烈推薦）
+.\deploy-safe.ps1 -Message "更新內容描述"
+
+# 🚀 快速部署（日常使用）
 .\quick-deploy.ps1 -Message "更新內容描述"
 
-# 完整部署（重要更新）
+# 🔧 完整部署（備用選項）
 .\deploy.ps1 -Message "重要功能更新"
 ```
+
+**部署腳本特色**：
+- ✅ **防止 node_modules 污染** - 絕不會將依賴文件部署到網站
+- ✅ **自動文件檢查** - 智能檢測異常文件數量並停止部署
+- ✅ **完整錯誤處理** - 出錯時自動回滾和清理
+- ✅ **部署統計顯示** - 清楚顯示部署的文件和大小
 
 ## 📁 項目結構
 ```
@@ -130,11 +139,14 @@ lawsOSoverview/
 │   ├── main.jsx            # 應用入口
 │   └── styles.css          # 全局樣式
 ├── sample/                 # 原始 HTML 文件（備份）
+├── deploy-safe.ps1         # 🛡️ 安全部署腳本（推薦）
 ├── deploy.ps1              # 完整部署腳本
 ├── quick-deploy.ps1        # 快速部署腳本
 ├── dev.ps1                 # 開發環境腳本
 ├── build-test.ps1          # 構建測試腳本
+├── validate-deploy.ps1     # 部署環境驗證腳本
 ├── README-SCRIPTS.md       # 腳本使用說明
+├── DEPLOY-FIXES.md         # 部署問題修復說明
 ├── package.json            # 項目配置
 ├── vite.config.js          # Vite 配置
 └── index.html              # HTML 模板
@@ -143,6 +155,7 @@ lawsOSoverview/
 ## 📚 詳細文檔
 
 - **[腳本使用指南](README-SCRIPTS.md)** - 詳細的開發和部署流程說明
+- **[部署問題修復](DEPLOY-FIXES.md)** - 部署腳本修復和改進說明
 - **[線上網站](https://boharry.github.io/lawsOSoverview/)** - 實際運行的應用
 
 ## 🔧 故障排除
@@ -155,18 +168,28 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 # 依賴安裝問題
 .\dev.ps1 -Clean
 
+# 部署問題（使用安全部署腳本）
+.\deploy-safe.ps1 -Force
+
+# 驗證部署環境
+.\validate-deploy.ps1
+
 # 網站沒有更新
 # 等待 2-5 分鐘，清除瀏覽器緩存
 ```
 
-詳細的故障排除指南請參考 [README-SCRIPTS.md](README-SCRIPTS.md#故障排除)
+詳細的故障排除指南請參考：
+- [README-SCRIPTS.md](README-SCRIPTS.md#故障排除) - 一般問題
+- [DEPLOY-FIXES.md](DEPLOY-FIXES.md) - 部署問題專門說明
 
 ## 🎯 最佳實踐
 
 1. **開發前先拉取**: 使用 `.\dev.ps1` 自動處理
 2. **部署前先測試**: 使用 `.\build-test.ps1` 確認構建
-3. **小修改用快速部署**: `.\quick-deploy.ps1`
-4. **重要更新用完整部署**: `.\deploy.ps1`
+3. **優先使用安全部署**: `.\deploy-safe.ps1` （強烈推薦）
+4. **小修改用快速部署**: `.\quick-deploy.ps1`
+5. **驗證部署環境**: 遇到問題時使用 `.\validate-deploy.ps1`
+6. **查看修復說明**: 部署問題請參考 `DEPLOY-FIXES.md`
 
 ## 📄 許可證
 
